@@ -130,34 +130,38 @@ Item {
         }
     }
 
-    Canvas {
-        id: canvas
-
+    Item {
         anchors { left: ctrlPanel.right; right: parent.right; top: parent.top; bottom: parent.bottom }
-        antialiasing: true
         clip: true
 
-        onPaint: {
-            // get context to draw with
-            var ctx = getContext("2d")
+        Canvas {
+            id: canvas
+            width: root.width; height: root.height
+            antialiasing: true
+            clip: true
 
-            ctx.fillStyle = "#000"
-            ctx.fillRect(0,0,canvas.width,canvas.height);
+            onPaint: {
+                // get context to draw with
+                var ctx = getContext("2d")
 
-            // draw all points
-            for (var i in points) {
-                context.beginPath();
-                context.fillStyle = "white"
-                context.strokeStyle = "blue"
-                context.moveTo(points[i].x + 3, points[i].y);
-                context.arc(points[i].x, points[i].y, 3, 0, 2*Math.PI, true)
-                context.fill();
-                context.stroke();
+                ctx.fillStyle = "#000"
+                ctx.fillRect(0,0,canvas.width,canvas.height);
+
+                // draw all points
+                for (var i in points) {
+                    context.beginPath();
+                    context.fillStyle = "white"
+                    context.strokeStyle = "blue"
+                    context.moveTo(points[i].x + 3, points[i].y);
+                    context.arc(points[i].x, points[i].y, 3, 0, 2*Math.PI, true)
+                    context.fill();
+                    context.stroke();
+                }
             }
-        }
-        onPainted: {
-            runGravity()
-            delayCall(1, function() { canvas.requestPaint() })
+            onPainted: {
+                runGravity()
+                delayCall(1, function() { canvas.requestPaint() })
+            }
         }
     }
 
