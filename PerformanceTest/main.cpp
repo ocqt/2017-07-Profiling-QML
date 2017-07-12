@@ -3,25 +3,14 @@
 
 int main(int argc, char *argv[])
 {
-    // Show scene graph
-    // Uncomment to show performance data
-//    qputenv("QSG_VISUALIZE", "batches");
-//    qputenv("QSG_VISUALIZE", "clip");
-//    qputenv("QSG_VISUALIZE", "changes");
-//    qputenv("QSG_VISUALIZE", "overdraw");
-//    qputenv("QSG_RENDERER_DEBUG", "render");
-//    qputenv("QSG_RENDER_TIMING", "1");
+    // Uncomment to show performance metrics
+//    qputenv("QSG_VISUALIZE", "batches");      // Show GPU batches
+//    qputenv("QSG_VISUALIZE", "clip");         // Show Items with clip == true
+//    qputenv("QSG_VISUALIZE", "changes");      // Show updating items
+//    qputenv("QSG_VISUALIZE", "overdraw");     // Show off-screen Items, hidden Items
+//    qputenv("QSG_RENDERER_DEBUG", "render");  // Show number of batches
+//    qputenv("QSG_RENDER_TIMING", "1");        // Show GPU timings
 //    qputenv("QSG_RENDER_LOOP", "threaded");  // types: basic, windows, threaded
-
-    /*
-    // Paste into Project environment setting
-    QSG_VISUALIZE=batches
-    QSG_VISUALIZE=clip
-    QSG_VISUALIZE=changes
-    QSG_VISUALIZE=overdraw
-    QSG_RENDERER_DEBUG=render
-    QSG_RENDER_TIMING=1
-    */
 
     QGuiApplication app(argc, argv);
 
