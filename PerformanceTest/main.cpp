@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
 //    qputenv("QSG_VISUALIZE", "overdraw");
 //    qputenv("QSG_RENDERER_DEBUG", "render");
 //    qputenv("QSG_RENDER_TIMING", "1");
+//    qputenv("QSG_RENDER_LOOP", "threaded");  // types: basic, windows, threaded
 
     /*
     // Paste into Project environment setting
